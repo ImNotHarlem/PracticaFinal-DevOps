@@ -40,3 +40,7 @@ jobs:
       - name: Subir imagen a Docker Hub
         run: |
           docker push iamnotharlem/practica-final-devops:latest
+          
+      - name: Desplegar en Render
+        run: |
+          curl -fsS -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
